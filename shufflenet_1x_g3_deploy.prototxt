@@ -95,7 +95,7 @@ layer {
   bottom: "pool1"
   top: "resx1_conv1"
   convolution_param {
-    num_output: 108
+    num_output: 54
     kernel_size: 1
     stride: 1
     pad: 0
@@ -150,7 +150,7 @@ layer {
   bottom: "resx1_conv1"
   top: "resx1_conv2"
   convolution_param {
-    num_output: 108
+    num_output: 54
     kernel_size: 3
     stride: 2
     pad: 1
@@ -262,7 +262,7 @@ layer {
   bottom: "resx1_concat"
   top: "resx2_conv1"
   convolution_param {
-    num_output: 120
+    num_output: 60
     kernel_size: 1
     stride: 1
     pad: 0
@@ -327,7 +327,7 @@ layer {
   bottom: "shuffle2"
   top: "resx2_conv2"
   convolution_param {
-    num_output: 120
+    num_output: 60
     kernel_size: 3
     stride: 1
     pad: 1
@@ -442,7 +442,7 @@ layer {
   bottom: "resx2_elewise"
   top: "resx3_conv1"
   convolution_param {
-    num_output: 120
+    num_output: 60
     kernel_size: 1
     stride: 1
     pad: 0
@@ -507,7 +507,7 @@ layer {
   bottom: "shuffle3"
   top: "resx3_conv2"
   convolution_param {
-    num_output: 120
+    num_output: 60
     kernel_size: 3
     stride: 1
     pad: 1
@@ -622,7 +622,7 @@ layer {
   bottom: "resx3_elewise"
   top: "resx4_conv1"
   convolution_param {
-    num_output: 120
+    num_output: 60
     kernel_size: 1
     stride: 1
     pad: 0
@@ -687,7 +687,7 @@ layer {
   bottom: "shuffle4"
   top: "resx4_conv2"
   convolution_param {
-    num_output: 120
+    num_output: 60
     kernel_size: 3
     stride: 1
     pad: 1
@@ -813,7 +813,7 @@ layer {
   bottom: "resx4_elewise"
   top: "resx5_conv1"
   convolution_param {
-    num_output: 120
+    num_output: 60
     kernel_size: 1
     stride: 1
     pad: 0
@@ -868,7 +868,7 @@ layer {
   bottom: "resx5_conv1"
   top: "resx5_conv2"
   convolution_param {
-    num_output: 120
+    num_output: 60
     kernel_size: 3
     stride: 2
     pad: 1
@@ -980,7 +980,7 @@ layer {
   bottom: "resx5_concat"
   top: "resx6_conv1"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 1
     stride: 1
     pad: 0
@@ -1045,7 +1045,7 @@ layer {
   bottom: "shuffle6"
   top: "resx6_conv2"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 3
     stride: 1
     pad: 1
@@ -1160,7 +1160,7 @@ layer {
   bottom: "resx6_elewise"
   top: "resx7_conv1"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 1
     stride: 1
     pad: 0
@@ -1225,7 +1225,7 @@ layer {
   bottom: "shuffle7"
   top: "resx7_conv2"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 3
     stride: 1
     pad: 1
@@ -1340,7 +1340,7 @@ layer {
   bottom: "resx7_elewise"
   top: "resx8_conv1"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 1
     stride: 1
     pad: 0
@@ -1405,7 +1405,7 @@ layer {
   bottom: "shuffle8"
   top: "resx8_conv2"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 3
     stride: 1
     pad: 1
@@ -1520,7 +1520,7 @@ layer {
   bottom: "resx8_elewise"
   top: "resx9_conv1"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 1
     stride: 1
     pad: 0
@@ -1585,7 +1585,7 @@ layer {
   bottom: "shuffle9"
   top: "resx9_conv2"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 3
     stride: 1
     pad: 1
@@ -1700,7 +1700,7 @@ layer {
   bottom: "resx9_elewise"
   top: "resx10_conv1"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 1
     stride: 1
     pad: 0
@@ -1765,7 +1765,7 @@ layer {
   bottom: "shuffle10"
   top: "resx10_conv2"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 3
     stride: 1
     pad: 1
@@ -1880,7 +1880,7 @@ layer {
   bottom: "resx10_elewise"
   top: "resx11_conv1"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 1
     stride: 1
     pad: 0
@@ -1945,7 +1945,7 @@ layer {
   bottom: "shuffle11"
   top: "resx11_conv2"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 3
     stride: 1
     pad: 1
@@ -2060,7 +2060,7 @@ layer {
   bottom: "resx11_elewise"
   top: "resx12_conv1"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 1
     stride: 1
     pad: 0
@@ -2125,7 +2125,7 @@ layer {
   bottom: "shuffle12"
   top: "resx12_conv2"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 3
     stride: 1
     pad: 1
@@ -2251,7 +2251,7 @@ layer {
   bottom: "resx12_elewise"
   top: "resx13_conv1"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 1
     stride: 1
     pad: 0
@@ -2306,7 +2306,7 @@ layer {
   bottom: "resx13_conv1"
   top: "resx13_conv2"
   convolution_param {
-    num_output: 240
+    num_output: 120
     kernel_size: 3
     stride: 2
     pad: 1
@@ -2418,7 +2418,7 @@ layer {
   bottom: "resx13_concat"
   top: "resx14_conv1"
   convolution_param {
-    num_output: 480
+    num_output: 240
     kernel_size: 1
     stride: 1
     pad: 0
@@ -2483,7 +2483,7 @@ layer {
   bottom: "shuffle14"
   top: "resx14_conv2"
   convolution_param {
-    num_output: 480
+    num_output: 240
     kernel_size: 3
     stride: 1
     pad: 1
@@ -2598,7 +2598,7 @@ layer {
   bottom: "resx14_elewise"
   top: "resx15_conv1"
   convolution_param {
-    num_output: 480
+    num_output: 240
     kernel_size: 1
     stride: 1
     pad: 0
@@ -2663,7 +2663,7 @@ layer {
   bottom: "shuffle15"
   top: "resx15_conv2"
   convolution_param {
-    num_output: 480
+    num_output: 240
     kernel_size: 3
     stride: 1
     pad: 1
@@ -2778,7 +2778,7 @@ layer {
   bottom: "resx15_elewise"
   top: "resx16_conv1"
   convolution_param {
-    num_output: 480
+    num_output: 240
     kernel_size: 1
     stride: 1
     pad: 0
@@ -2843,7 +2843,7 @@ layer {
   bottom: "shuffle16"
   top: "resx16_conv2"
   convolution_param {
-    num_output: 480
+    num_output: 240
     kernel_size: 3
     stride: 1
     pad: 1
