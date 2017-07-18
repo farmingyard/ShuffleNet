@@ -817,6 +817,7 @@ layer {
     kernel_size: 1
     stride: 1
     pad: 0
+    group: 3
     bias_term: false
     weight_filler {
       type: "msra"
@@ -863,9 +864,18 @@ layer {
   top: "resx5_conv1"
 }
 layer {
+  name: "shuffle5"
+  type: "ShuffleChannel"
+  bottom: "resx5_conv1"
+  top: "shuffle5"
+  shuffle_channel_param {
+    group: 3
+  }
+}
+layer {
   name: "resx5_conv2"
   type: "ConvolutionDepthwise"
-  bottom: "resx5_conv1"
+  bottom: "shuffle5"
   top: "resx5_conv2"
   convolution_param {
     num_output: 60
@@ -2255,6 +2265,7 @@ layer {
     kernel_size: 1
     stride: 1
     pad: 0
+    group: 3
     bias_term: false
     weight_filler {
       type: "msra"
@@ -2301,9 +2312,18 @@ layer {
   top: "resx13_conv1"
 }
 layer {
+  name: "shuffle13"
+  type: "ShuffleChannel"
+  bottom: "resx13_conv1"
+  top: "shuffle13"
+  shuffle_channel_param {
+    group: 3
+  }
+}
+layer {
   name: "resx13_conv2"
   type: "ConvolutionDepthwise"
-  bottom: "resx13_conv1"
+  bottom: "shuffle13"
   top: "resx13_conv2"
   convolution_param {
     num_output: 120
