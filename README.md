@@ -23,4 +23,4 @@ The top-1/5 accuracy rates by using single center crop (crop size: 224x224, imag
 
 Network|Top-1|Top-5|Download|Architecture
 :---:|:---:|:---:|:---:|:---:
-MobileNet| 62.8%| 84.7%| [caffemodel (7.0 MB)](http://pan.baidu.com/s/1c2NBXOc)| [deploy](https://github.com/farmingyard/ShuffleNet/blob/master/shufflenet_1x_g3_deploy.prototxt)
+ShuffleNet| 62.8%| 84.7%| [caffemodel (7.0 MB)](http://pan.baidu.com/s/1c2NBXOc)| [deploy](https://github.com/farmingyard/ShuffleNet/blob/master/shufflenet_1x_g3_deploy.prototxt)
