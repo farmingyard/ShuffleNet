@@ -17,10 +17,3 @@ message ShuffleChannelParameter {
   optional uint32 group = 1[default = 1]; // The number of group
 }
 ```
-
-# Pretrained ShuffleNet 1x group=3 model on ImageNet
-The top-1/5 accuracy rates by using single center crop (crop size: 224x224, image size: 256x256):
-
-Network|Top-1|Top-5|Download|Architecture
-:---:|:---:|:---:|:---:|:---:
-ShuffleNet| 62.8%| 84.7%| [caffemodel (7.0 MB)](http://pan.baidu.com/s/1c2NBXOc)| [deploy](https://github.com/farmingyard/ShuffleNet/blob/master/shufflenet_1x_g3_deploy.prototxt)
