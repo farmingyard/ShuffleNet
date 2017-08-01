@@ -30,6 +30,17 @@ void ShuffleChannelLayer<Dtype>::Resize_cpu(Dtype *output, const Dtype *input, i
 }
 
 template <typename Dtype>
+void ShuffleChannelLayer<Dtype>::Reshape(const vector<Blob<Dtype> *> &bottom, const vector<Blob<Dtype> *> &top)
+{
+  int channels_ = bottom[0]->channels();
+  int height_ = bottom[0]->height();
+  int width_ = bottom[0]->width();
+
+  top[0]->Reshape(bottom[0]->num(), channels_, height_, width_);
+
+}
+
+template <typename Dtype>
 void ShuffleChannelLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,
                                              const vector<Blob<Dtype>*>& top) {
     const Dtype* bottom_data = bottom[0]->cpu_data();
