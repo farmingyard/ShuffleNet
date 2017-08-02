@@ -17,7 +17,7 @@ public:
     virtual void LayerSetUp(const vector<Blob<Dtype>*>& bottom,
         const vector<Blob<Dtype>*>& top);
     virtual void Reshape(const vector<Blob<Dtype>*>& bottom,
-        const vector<Blob<Dtype>*>& top) {}
+        const vector<Blob<Dtype>*>& top);
     virtual inline const char* type() const { return "ShuffleChannel"; }
 
 protected:
