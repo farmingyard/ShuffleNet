@@ -9,15 +9,12 @@ template <typename Dtype>
 __global__ void ShuffleChannelKernel(const int nthreads, const int feature_map_size,
 	Dtype *output, const Dtype *input, int group_row, int group_column, int len) {
 	CUDA_KERNEL_LOOP(index, nthreads) {
-		const int n = index / group_row / group_column;
-		const int i = (index / group_column) % group_row;
-		const int j = index % group_column;
-
-		const Dtype* p_i = input + n * feature_map_size + (i * group_column + j) * len;
+		const int n = index / group_row / group_column / len;
+		const int i = (index / group_column / len) % group_row;
+		const int j = index / len % group_column;
+		const int k = index - (n * feature_map_size + (i * group_column + j) * len);
 		Dtype* p_o = output + n * feature_map_size + (j * group_row + i) * len;
-
-		for (int k = 0; k < len; k++)
-			p_o[k] = p_i[k];
+		p_o[k] = input[index];
 	}
 }
 
@@ -50,7 +47,7 @@ void ShuffleChannelLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
     int group_row = group_;
     int group_column = int(chs / group_row);
     CHECK_EQ(chs, (group_column * group_row)) << "Wrong group size.";
-	int count = num * group_column * group_row;
+	int count = num * group_column * group_row * sp_sz;
 	ShuffleChannelKernel<Dtype> << <CAFFE_GET_BLOCKS(count), CAFFE_CUDA_NUM_THREADS >> >(
 		count, feature_map_size, top_data, bottom_data, group_row, group_column, sp_sz);
     //Dtype* temp_data = temp_blob_.mutable_gpu_data();
@@ -76,7 +73,7 @@ void ShuffleChannelLayer<Dtype>::Backward_gpu(const vector<Blob<Dtype>*>& top,
 
       int group_row = int(chs / group_);
       int group_column = group_;
-	  int count = num * group_column * group_row;
+	  int count = num * group_column * group_row * sp_sz;
 	  ShuffleChannelKernel<Dtype> << <CAFFE_GET_BLOCKS(count), CAFFE_CUDA_NUM_THREADS >> >(
 		  count, feature_map_size, bottom_diff, top_diff, group_row, group_column, sp_sz);
       //Dtype* temp_diff = temp_blob_.mutable_gpu_diff();
