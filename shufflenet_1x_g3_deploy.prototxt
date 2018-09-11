@@ -331,6 +331,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 60
     bias_term: false
     weight_filler {
       type: "msra"
@@ -511,6 +512,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 60
     bias_term: false
     weight_filler {
       type: "msra"
@@ -691,6 +693,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 60
     bias_term: false
     weight_filler {
       type: "msra"
@@ -882,6 +885,7 @@ layer {
     kernel_size: 3
     stride: 2
     pad: 1
+    group: 60
     bias_term: false
     weight_filler {
       type: "msra"
@@ -1059,6 +1063,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 120
     bias_term: false
     weight_filler {
       type: "msra"
@@ -1239,6 +1244,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 120
     bias_term: false
     weight_filler {
       type: "msra"
@@ -1419,6 +1425,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 120
     bias_term: false
     weight_filler {
       type: "msra"
@@ -1599,6 +1606,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 120
     bias_term: false
     weight_filler {
       type: "msra"
@@ -1779,6 +1787,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 120
     bias_term: false
     weight_filler {
       type: "msra"
@@ -1959,6 +1968,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 120
     bias_term: false
     weight_filler {
       type: "msra"
@@ -2139,6 +2149,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 120
     bias_term: false
     weight_filler {
       type: "msra"
@@ -2330,6 +2341,7 @@ layer {
     kernel_size: 3
     stride: 2
     pad: 1
+    group: 120
     bias_term: false
     weight_filler {
       type: "msra"
@@ -2507,6 +2519,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 240
     bias_term: false
     weight_filler {
       type: "msra"
@@ -2687,6 +2700,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 240
     bias_term: false
     weight_filler {
       type: "msra"
@@ -2867,6 +2881,7 @@ layer {
     kernel_size: 3
     stride: 1
     pad: 1
+    group: 240
     bias_term: false
     weight_filler {
       type: "msra"
